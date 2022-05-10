@@ -1,0 +1,9 @@
+.cours{
+    border: black dotted 3px;
+}
+
+.image-upload > input {
+    visibility:hidden;
+    width:0;
+    height:0
+  }
