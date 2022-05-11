@@ -7,8 +7,6 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 
-
-
 const Sidebar = () => {
 
   const dispatch = useDispatch();
@@ -23,7 +21,7 @@ const Sidebar = () => {
       <div className="sidebar__menu">
         <div className="sidebar__link active_menu_link">
           <i className="fa fa-home"></i>
-          <a href="/etudiant/dashboard">Acceuil</a>
+          <a href="/etudiant/acceuil">Acceuil</a>
         </div>
         <h2>USERS</h2>
         <div className="sidebar__link">
@@ -36,9 +34,13 @@ const Sidebar = () => {
           <i className="fa fa-check"></i>
           <a href="/Cours" >Mes Cours</a>
         </div>
-
+        <br />
+        <div className="sidebar__link">
+          <i className="fa fa-check"></i>
+          <a href="#" >Mes Dossiers</a>
+        </div>
         <div className="sidebar__logout">
-          <i className="fa fa-sign-out"></i>
+          <i class="fas fa-sign-out-alt"></i>
           <a href="/" onClick={logout}
           >Déconnexion</a>
         </div>

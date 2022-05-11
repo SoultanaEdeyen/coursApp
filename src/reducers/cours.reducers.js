@@ -9,17 +9,34 @@ const initState = {
 const CoursReducer = (state = {initState}, action) => {
   //console.log(action)
   switch (action.type) {
+    case CoursConstants.ADD_COURS_REQUEST:
+      state = {
+      ...state,
+      };
+      break;
+  case CoursConstants.ADD_COURS_SUCCESS:
+    state = {
+      ...state,
+      cours: action.payload.cours,
+      message: 'succes',
+    };
+    break;
+  case CoursConstants.ADD_COURS_FAILURE:
+    state = {
+      ...state,
+      error: action.payload.error,
+    };
+    break;
     case CoursConstants.GETBYIDUSER_COURS_REQUEST:
         state = {
         ...state,
-        
         };
         break;
     case CoursConstants.GETBYIDUSER_COURS_SUCCESS:
       state = {
         ...state,
         cours: action.payload.cours,
-        message: 'succes',
+        message: 'false',
       };
       break;
     case CoursConstants.GETBYIDUSER_COURS_FAILURE:
@@ -55,7 +72,7 @@ const CoursReducer = (state = {initState}, action) => {
       state = {
         ...state,
         cours: action.payload.cours,
-        message: 'succes',
+        message: 'false',
       };
       break;
     case CoursConstants.GET_COURS_FAILURE:

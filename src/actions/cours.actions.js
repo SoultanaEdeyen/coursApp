@@ -27,13 +27,13 @@ export const ADDCours = (form) => {
 };
 
 
-export const getCoursByIdUser = (id) => {
+export const getCoursByIdEtudiant = (id) => {
     console.log(id)
     return async (dispatch) => {
         dispatch({
             type: CoursConstants.GETBYIDUSER_COURS_REQUEST,
         });
-        const res = await axios.get(`/cours/getByIdUser/` + id)
+        const res = await axios.get(`/cours/getByIdEtudiant/` + id)
             .then((res) => {
                 // succes
                 dispatch({
@@ -76,6 +76,31 @@ export const updateCours = (id, cours) => {
 };
 
 
+export const deleteCours = (id) => {
+    return async (dispatch) => {
+        dispatch({
+            type: CoursConstants.UPDATE_COURS_REQUEST,
+        });
+        await axios.delete(`/cours/delete/` + id)
+            .then((res) => {
+                // succes
+                console.log(res.data);
+                dispatch({
+                    type: CoursConstants.UPDATE_COURS_SUCCESS,
+                    payload: { cours: res.data },
+                });
+            })
+            .catch((err) => {
+                // echec
+                dispatch({
+                    type: CoursConstants.UPDATE_COURS_FAILURE,
+                    payload: { error: err.data.error }
+                });
+            });
+    };
+};
+
+
 export const getAllCOURS = () => {
     return async (dispatch) => {
         dispatch({
@@ -94,6 +119,30 @@ export const getAllCOURS = () => {
                 // echec
                 dispatch({
                     type: CoursConstants.GET_COURS_FAILURE,
+                    payload: { error: err.response.data }
+                });
+            });
+    };
+};
+
+export const getCoursByTitle = (titre) => {
+    console.log(titre)
+    return async (dispatch) => {
+        dispatch({
+            type: CoursConstants.GETBYIDUSER_COURS_REQUEST,
+        });
+        const res = await axios.get(`/cours/getByTitle/` + titre)
+            .then((res) => {
+                // succes
+                dispatch({
+                    type: CoursConstants.GETBYIDUSER_COURS_SUCCESS,
+                    payload: { cours: res.data }
+                });
+            })
+            .catch((err) => {
+                // echec
+                dispatch({
+                    type: CoursConstants.GETBYIDUSER_COURS_FAILURE,
                     payload: { error: err.response.data }
                 });
             });

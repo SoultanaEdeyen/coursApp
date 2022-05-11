@@ -15,6 +15,11 @@ export const login = (user) => {
         const {token, user} = res.data;
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(user));
+        if(user){
+          localStorage.setItem('User', JSON.stringify(user._id));
+
+          console.log(user._id)
+        }
         // dispatch(getFormateur());
        /* if (user.role === 'etudiant') {
           dispatch(getEtudiantByIdUser(user._id));

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './index.css';
 import { Redirect } from 'react-router-dom';
 
-import Header from '../../components/Headers/index';
+import Header from '../../components/Headers/test'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../actions/index';
 import Layout from '../../components/layouts/index';
+import Footer from '../../components/Footers';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 
 function Login() {
@@ -20,7 +22,7 @@ function Login() {
 
   if (localStorage.getItem('token') != undefined) {
     if (AuthUser.role === 'etudiant') {
-      return <Redirect to="/etudiant/dashboard" />;
+      return <Redirect to="/etudiant/acceuil" />;
     } else if (AuthUser.role === 'admin') {
       return <Redirect to="/admin/dashboard" />;
     }
@@ -42,10 +44,13 @@ function Login() {
   }
   return (
     <div>
+      <div>
+        <Header />
+      </div>
       <body>
         <div id="login-box">
-          <div class="left" style={{marginLeft: "60px"}} >
-            <br/><br/><br/>
+          <div class="left" style={{ marginLeft: "60px" }} >
+            <br /><br /><br />
             <h1 id="logo">CourApp</h1>
 
             <form method="POST" action="#" id="login">
@@ -74,8 +79,8 @@ function Login() {
               </nav>
               <br></br>
               <br />
-           
-                  {   /*           <button  type="submit" className="form__button"
+
+              {   /*           <button  type="submit" className="form__button"
                 style={{ marginLeft: "29px" }}
                 onClick={userLogin}>Connexion</button> */}
 
@@ -96,11 +101,15 @@ function Login() {
             style={{ backgroundColor: "#b6e2fc" }} */>
             <img
               src='/front1.png'
-              style={{ width: "800px", height: "800px" }}
+              style={{ width: "800px", height: "600px", marginTop: "65px" }}
             />
           </div>
+
         </div>
       </body >
+      <div style={{ marginTop: "200px" }}>
+        <Footer />
+      </div>
 
     </div >
   );

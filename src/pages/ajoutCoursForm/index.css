@@ -1,0 +1,9 @@
+#ajout-box{
+
+    width: 500px;
+    align-items: center;
+    border: 2px solid black;
+    margin-top: 65px;
+    margin-bottom: 65px;
+    margin-left: 400px;
+}

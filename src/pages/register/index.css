@@ -28,7 +28,9 @@ body {
   top: 0;
   left: 0;
   box-sizing: border-box;*/
-  padding: 120px;
+  
+  padding: 50px;
+  padding-left: 160px;
   width: 300px;
   height: 400px;
 }
@@ -97,7 +99,7 @@ button {
 	transition: transform 80ms ease-in;
 	align-items: center;
 	justify-content: center;
-  
+  cursor: "pointer"
 
 }
 

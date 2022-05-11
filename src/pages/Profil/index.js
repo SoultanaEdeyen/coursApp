@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Headers/test'
 import Sidebar from '../../components/Sidebar'
-import Layout from '../../components/layouts';
 import Footer from '../../components/Footers';
 import './index.css';
 import Main from './main/main';
@@ -11,7 +10,7 @@ function Index() {
     const dispatch = useDispatch();
 
     useEffect(() => { }, []);
-
+  
     return (
         <div>
             <Header />
@@ -26,7 +25,7 @@ function Index() {
                 <Main />
             </div>
 
-            <Footer />
+
 
 
         </div>

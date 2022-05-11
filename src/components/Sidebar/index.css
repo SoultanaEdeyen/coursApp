@@ -17,7 +17,6 @@
 	align-items: center;
 	color: #93AECE;
 	margin-bottom: 30px;
-	/* color: #E85B6B; */
   }
   
   .sidebar__img {
@@ -37,51 +36,39 @@
   }
   
   .sidebar__menu > h2 {
-	color: #d2dfed;
-	font-size: 20px;
+	color: #93AECE;
+	font-size: 24px;
 	margin-top: 15px;
 	margin-bottom: 5px;
 	margin-right:2px;
 	/*padding: 0 10px;*/
 	font-weight: 700;
+	font-family:serif;
   }
+  .sidebar__link > i {
+	color: #5E7FA7;
+	/*#5E7FA7 */
+  }
+
 
   a{
 	  font-size: 24px;
   }
   
   .sidebar__link {
-	color: #93AECE;
+	color: #5E7FA7;
 	padding: 10px;
 	border-radius: 3px;
 	margin-bottom: 5px;
   }
   
- /* .active_menu_link {
-	background: #5E7FA7;
-	color: #a2cce3;
-	text-align: left;
-  
-  }
-  
-  .active_menu_link a {
-	color: #ffffff !important;
-  }*/
-  
   .sidebar__link > a {
 	text-decoration: none;
-	color: #93AECE;
+	color:#5E7FA7;
 	font-weight: 700;
   }
-  
- /* .sidebar__link:hover {
-	background: #5E7FA7;
-	color: #ffffff;
-	text-align: left;
-  
-  }*/
   .sidebar__link a:hover {
-	color: #5E7FA7;
+	color: #93AECE;
 	text-align: left;
   
   }
@@ -93,9 +80,10 @@
   
   .sidebar__logout {
 	margin-top: 20px;
-	padding: 10px;
+	
 	color: #e65061;
-  }
+	font-size: 18px;
+}
   
   .sidebar__logout > a {
 	text-decoration: none;
@@ -128,5 +116,5 @@
 
 a:focus{
 	color: #5E7FA7;
-	
+
 }
